@@ -172,7 +172,7 @@ def sync_table(conn_config, stream, state, desired_columns):
 
          counter.increment()
 
-
+   logger.info("Test")
    state = singer.write_bookmark(state, stream.tap_stream_id, 'ORA_ROWSCN', None)
    #always send the activate version whether first run or subsequent
    singer.write_message(activate_version_message)
