@@ -622,6 +622,7 @@ def do_sync(conn_config, catalog, default_replication_method, state):
    return state
 
 def main_impl():
+   LOGGER.info("Test")
    args = utils.parse_args(REQUIRED_CONFIG_KEYS)
    if args.config.get('sid') == None and args.config.get('service_name') == None:
       raise Exception("Config is missing either a sid or a service_name key")
