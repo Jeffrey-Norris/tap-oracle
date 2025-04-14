@@ -680,7 +680,9 @@ def main_impl():
 
 def main():
     try:
+        LOGGER.info("Test")
         main_impl()
+        LOGGER.info("Test")
     except Exception as exc:
         LOGGER.critical(exc)
         raise exc
