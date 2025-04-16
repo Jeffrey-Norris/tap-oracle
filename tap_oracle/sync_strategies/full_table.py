@@ -74,11 +74,11 @@ def sync_view(conn_config, stream, state, desired_columns):
                                                        desired_columns,
                                                        time_extracted)
          singer.write_message(record_message)
-         singer.write_message(singer.StateMessage(value=counter.record_count()))
          counter.increment()
 
    #always send the activate version whether first run or subsequent
    singer.write_message(activate_version_message)
+   singer.write_message(singer.StateMessage(value='counter'))
    cur.close()
    connection.close()
    return state
