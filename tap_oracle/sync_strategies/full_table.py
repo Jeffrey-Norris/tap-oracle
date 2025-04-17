@@ -67,8 +67,9 @@ def sync_view(conn_config, stream, state, desired_columns):
                                                       escaped_table)
 
       LOGGER.info("select %s", select_sql)
-      for row in cur.execute(select_sql):
+      for index, row in enumerate(cur.execute(select_sql)):
          record_message = common.row_to_singer_message(stream,
+                                                       index,
                                                        row,
                                                        nascent_stream_version,
                                                        desired_columns,
