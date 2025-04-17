@@ -69,13 +69,12 @@ def sync_view(conn_config, stream, state, desired_columns):
       LOGGER.info("select %s", select_sql)
       for index, row in enumerate(cur.execute(select_sql)):
          record_message = common.row_to_singer_message(stream,
-                                                       index,
                                                        row,
                                                        nascent_stream_version,
                                                        desired_columns,
                                                        time_extracted)
          singer.write_message(record_message)
-         LOGGER.info(counter)
+         LOGGER.info(index)
          counter.increment()
 
    #always send the activate version whether first run or subsequent
