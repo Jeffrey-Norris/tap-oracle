@@ -41,5 +41,5 @@ settings:
       kind: integer
     - name: ora_python_driver_type
       kind: string
-    - name: read_rows
+    - name: record_count
       kind: integer
