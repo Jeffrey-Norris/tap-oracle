@@ -74,7 +74,7 @@ def sync_view(conn_config, stream, state, desired_columns):
                                                        desired_columns,
                                                        time_extracted)
          singer.write_message(record_message)
-         LOGGER.info(counter.tags)
+         LOGGER.info(counter)
          counter.increment()
 
    #always send the activate version whether first run or subsequent
