@@ -3,6 +3,7 @@ import copy
 import decimal
 import pdb
 import time
+import os
 
 import singer
 import singer.metadata as metadata
@@ -82,7 +83,7 @@ def sync_view(conn_config, stream, state, desired_columns):
 
    state['record_count'] = index
 
-   os.environ["MY_VARIABLE"] = index
+   os.environ["RECORD_COUNT"] = index
 
    singer.write_message(singer.StateMessage(value=index))
    record_count = index
