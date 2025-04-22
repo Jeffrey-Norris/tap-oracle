@@ -83,6 +83,7 @@ def sync_view(conn_config, stream, state, desired_columns):
 
    state['record_count'] = index
 
+   os.environ[RECORD_COUNT] = index
    
    with open(".env", "a") as env_file:
       env_file.write("RECORD_COUNT={index}")
