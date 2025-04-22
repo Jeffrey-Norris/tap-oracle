@@ -83,7 +83,7 @@ def sync_view(conn_config, stream, state, desired_columns):
 
    state['record_count'] = index
 
-   os.environ['RECORD_COUNT'] = index
+   self.config["record_limit"] = index
    
 
    singer.write_message(singer.StateMessage(value=index))
