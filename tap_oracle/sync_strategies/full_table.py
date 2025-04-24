@@ -81,7 +81,7 @@ def sync_view(conn_config, stream, state, desired_columns):
    #always send the activate version whether first run or subsequent
    singer.write_message(activate_version_message)
 
-   state['record_count'] = index
+   #state['record_count'] = index
 
 
    #os.environ('RECORD_COUNT') = index
